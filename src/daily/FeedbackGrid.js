@@ -18,8 +18,9 @@ function FeedBackGrid() {
   const avgSocialRating = allSocialRating.reduce((sum, rating) => (sum + rating)) / allSocialRating.length;
 
   return (<>
-    <div>Today's average Social atmosphere rating: {avgSocialRating}/10</div>
-    <div>Today's average General atmosphere rating: {avgGeneralRating}/10</div>
+    <br></br>
+    <div>Today's average Social atmosphere rating: {Math.round(avgSocialRating)}/10</div>
+    <div>Today's average General atmosphere rating: {Math.round(avgGeneralRating)}/10</div>
     <br></br>
     <br></br>
     <FeedBackPost dailyFeedback={dailyFeedback} />

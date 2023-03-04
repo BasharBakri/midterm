@@ -17,7 +17,7 @@ export const addDayFeedBack = async ({ request, params }) => {
   });
   console.log(response);
   if (response.ok) {
-    return redirect('/');
+    return redirect('..');
   } else {
     throw json({ message: 'Could not send feedBack' }, { status: 400 })
   }

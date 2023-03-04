@@ -4,7 +4,11 @@ import TypeContext from "./context/userType"
 
 
 export default function MainNav() {
-  const typeChanger = useContext(TypeContext)
+
+
+
+
+  const type = useContext(TypeContext)
 
   const mainActiveStyle = {
     color: '#CCC',
@@ -33,7 +37,8 @@ export default function MainNav() {
             }>Stats</NavLink>
           </li>
           <li>
-            <button onClick={typeChanger.changeType} className="mainNavButton">Change user Type</button>
+
+            <button onClick={type.changeType} className="mainNavButton">{type.typeText}</button>
 
           </li>
         </ul>

@@ -9,8 +9,8 @@ function CheckIn() {
 
 
   return (<>
-    {type.userType && type.checkInOpen && <Link to='daily'>
-      <button >Check In for the day</button>
+    {type.userType && type.checkInOpen && !type.isCheckedIn && <Link to='daily'>
+      <button onClick={type.handleIsCheckedIn} >Check In for the day</button>
     </Link>}
     {!type.userType && !type.checkInOpen && <Link to='daily'>
       <button onClick={type.openCheckIn} >Open Check In for the day</button>

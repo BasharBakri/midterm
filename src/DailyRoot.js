@@ -1,10 +1,12 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router-dom";
 
 function DailyRoot() {
+  const navigation = useNavigation();
 
 
   return <>
-    <Outlet />
+    {navigation.state === 'loading' && <p>Loading...</p>}
+    {(navigation.state === 'idle' || navigation.state === 'submitting') && <Outlet />}
   </>
 }
 export default DailyRoot;

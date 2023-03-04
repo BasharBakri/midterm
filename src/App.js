@@ -5,7 +5,7 @@ import DailyHome from './daily/DailyHome';
 import StatsHome from './stats/StatsHome';
 import RootLayout from './RootLayout';
 import FeedBackGrid from './daily/FeedbackGrid';
-
+import AddFeedback from './daily/AddFeedback';
 
 import DailyRoot from './DailyRoot';
 
@@ -22,7 +22,8 @@ const router = createBrowserRouter([
       {
         path: 'daily', element: <DailyRoot />,
         children: [
-          { index: true, element: <DailyHome />, action: addDayFeedBack },
+          { index: true, element: <DailyHome /> },
+          { path: 'addfeedback', element: <AddFeedback />, action: addDayFeedBack },
           { path: 'feedback', element: <FeedBackGrid />, loader: getDayFeedBack, id: 'getDayFeedBack' }
         ]
       },
