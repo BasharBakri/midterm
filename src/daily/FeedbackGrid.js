@@ -4,7 +4,6 @@ import { useRouteLoaderData } from "react-router-dom";
 
 function FeedBackGrid() {
 
-
   const dailyFeedback = useRouteLoaderData('getDayFeedBack');
 
   const allGeneralRating = dailyFeedback.map((oneFeed) => {

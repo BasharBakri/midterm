@@ -7,7 +7,6 @@ export default function AddFeedback() {
   const isSubmitting = navigation.state === 'submitting'
 
 
-
   return <Form method="post" >
     <p>
       <label htmlFor="socialtext"> How was the social atmosphere? </label>

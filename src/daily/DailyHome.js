@@ -16,7 +16,7 @@ function DailyHome() {
 
 
 
-    {type.userType && !type.checkInOpen && type.isCheckedIn && <Link to={'addfeedback'}>Add feedback for today</Link>}
+    {type.userType && !type.checkInOpen && type.isCheckedIn && <Link to={'addfeedback'}><button onClick={type.handleIsCheckedIn}>CheckOut for the day</button></Link>}
   </>)
 }
 

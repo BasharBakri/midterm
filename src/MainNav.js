@@ -37,6 +37,11 @@ export default function MainNav() {
             }>Stats</NavLink>
           </li>
           <li>
+            <NavLink to='/auth' style={({ isActive }) =>
+              isActive ? mainActiveStyle : undefined
+            }>Authentication</NavLink>
+          </li>
+          <li>
 
             <button onClick={type.changeType} className="mainNavButton">{type.typeText}</button>
 

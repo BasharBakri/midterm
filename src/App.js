@@ -3,6 +3,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import MainHome from './main/MainHome';
 import DailyHome from './daily/DailyHome';
 import StatsHome from './stats/StatsHome';
+import AuthenticationPage from './Authentication/AuthenticationPage';
 import RootLayout from './RootLayout';
 import FeedBackGrid from './daily/FeedbackGrid';
 import AddFeedback from './daily/AddFeedback';
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
     path: '/', element: <RootLayout />, children: [
       { index: true, element: <MainHome /> },
       { path: 'stats', element: <StatsHome /> },
+      { path: 'auth', element: <AuthenticationPage /> },
       {
         path: 'daily', element: <DailyRoot />,
         children: [
