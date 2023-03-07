@@ -3,22 +3,37 @@ import { useRouteLoaderData } from "react-router-dom";
 function EmployeeCard() {
 
   const info = useRouteLoaderData('root');
-  console.log(info);
 
   const employees = info.employees;
 
   const employeesCard = employees.map((employee) => {
-    return (<div key={employee.employeeId}>
-      <h4>{employee.name}</h4>
-      <span>{employee.checkedIn ? 'CheckIn' : 'Not CheckedIn'}</span>
+    const timeString = isNaN(new Date(employee.time)) ? '' : new Date(employee.time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    return (
+      <tr key={employee.employeeId}>
+        <td>{employee.name}</td>
+        <td><img src={employee.image} alt={employee.name} /></td>
+        <td>{timeString}</td>
+        <td>{employee.checkedIn ? 'Checked In' : 'Offline'}</td>
+      </tr>
+    );
+  });
 
-    </div>)
-  })
+  return (
+    <table className='employeeTable'>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Image</th>
+          <th>Clock In Time</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {employeesCard}
+      </tbody>
+    </table>
+  );
 
-
-  return (<>
-    {employeesCard}
-  </>)
 }
 
 export default EmployeeCard;

@@ -20,6 +20,8 @@ export const addTaskfunc = async ({ request, params }) => {
     ...existingData,
     tasks: [...existingData.tasks, sentDailyFeedBack]
   };
+  console.log(updatedData);
+
 
   const putResponse = await fetch(`https://64020dfe3779a86262641f9e.mockapi.io/days/2`, {
     method: 'PUT',

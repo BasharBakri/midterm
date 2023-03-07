@@ -1,46 +1,150 @@
-body {
+body,
+html {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
+  padding: 0;
+  background-color: #e2e2e2;
+  height: 98vh;
 }
+
+
 
 
 /* Header & nav links */
 
 
 .headerNavBar {
-  margin: auto;
-  padding: 1rem;
-  background-color: #000000;
-
+  padding: 0.001rem;
+  background-color: rgb(21, 19, 19);
+  margin: 0;
 }
 
 
 
-.mainNavBar {
+.ulNavBar {
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
   list-style-type: none;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.mainNavBar a {
+.ulNavBar a {
   text-decoration: none;
-  color: #f6f6f6;
+  color: #ffffff;
   cursor: pointer;
   font-weight: 500;
 }
 
-.mainNavBar a:hover {
+
+
+.ulNavBar a:hover {
   text-decoration: underline;
 }
 
-.mainNavBar a:active {
-  color: #CCC;
+.ulNavBar a:active {
+  color: #9c0000;
 }
 
-.mainNavButton {
+.ulNavButton {
   cursor: pointer;
-  background-color: white;
-  color: black;
-  font-weight: 600;
-  border-radius: 10px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+  color: #9c0000;
+}
+
+
+.dread {
+  background-image: url(./imgs/sr-avatar-dreadpirate.png);
+}
+
+.lucy {
+  background-image: url(./imgs/sr-avatar-reallucydrop.png);
+}
+
+.friendly {
+  background-image: url(./imgs/sr-avatar-friendlychemist.png);
+}
+
+.red {
+  background-image: url(./imgs/sr-avatar-redandwhite.png);
+}
+
+.btnText {
+  margin-top: 0.3rem;
+  color: white;
+  align-self: center;
+  display: block;
+}
+
+.btnBtnText {
+  font-size: 0.8rem;
+}
+
+.sales {
+  margin-left: 0.5rem;
+}
+
+
+/* main main  */
+
+.mainContentContainer {
+  margin-left: 2.5rem;
+}
+
+
+/* Employee table */
+
+
+.employeeTable {
+  border-collapse: collapse;
+  border: solid 1px black;
+}
+
+.employeeTable td,
+th {
+  padding: 0.2rem;
+  border: solid 1px black;
+}
+
+
+.employeeTable tr:nth-child(even),
+th {
+  background-color: #9c0000;
+
+}
+
+.employeeTable tr:nth-child(odd) {
+  background-color: #e2e2e2;
+  color: #0f0f0f;
+
+}
+
+
+/*
+
+task list css
+
+*/
+
+.checkBoxContainer {
+  padding: 15px;
+  list-style: none;
+  border: 1px solid #9c0000;
+  background-color: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 250px;
+}
+
+.checkBoxContainer li {
+  padding: 1rem;
+  border-bottom: 1px solid #9c0000;
 }

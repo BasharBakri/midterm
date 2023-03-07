@@ -8,22 +8,28 @@ import AddTask from "./AddTask";
 
 
 function DailyHome() {
-  const todayTime = new Date().toLocaleTimeString('en-us', { weekday: "long", year: "numeric", month: "short", day: "numeric" });
-  const type = useContext(TypeContext)
+  const type = useContext(TypeContext);
+  const currentUserNo = parseInt(type.userType)
   const info = useRouteLoaderData('root')
   const openSatus = info.isOpen;
+  const employees = info.employees;
+  const currentEmployee = employees.filter(function (employee) {
+    return parseInt(employee.employeeId) === currentUserNo;
+  });
+  let checkInTime = currentEmployee[0].time;
 
-
+  const displayTime = new Date(checkInTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  console.log(currentUserNo);
   return (<>
-    <p>Check In Time: {todayTime}</p>
+    <p>Check In Time: {displayTime}</p>
     {openSatus && type.userType === 4 && <button onClick={closeCurrentDay}>Close Check In</button>}
-    {type.userType === 4 && !openSatus && <Link to={'feedback'}>Today's Feedback</Link>}
+    {currentUserNo === 4 && !openSatus && <Link to={'feedback'}>Today's Feedback</Link>}
 
 
-    {type.userType === 4 && openSatus && <AddTask />}
-    {(type.userType === 1 || 2 || 3) && openSatus && <TaskList />}
+    {currentUserNo === 4 && openSatus && <AddTask />}
+    {(currentUserNo === 1 || currentUserNo === 2 || currentUserNo === 3) && openSatus && <TaskList />}
 
-    {(type.userType === 1 || 2 || 3) && !openSatus && <Link to={'addfeedback'}><button onClick={() => { type.handleIsCheckedIn(type.userType) }}>Check Out for the day</button></Link>}
+    {currentUserNo && !openSatus && <Link to={'addfeedback'}><button onClick={() => { type.handleIsCheckedIn(false) }}>Check Out for the day</button></Link>}
   </>)
 }
 

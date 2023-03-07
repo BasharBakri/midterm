@@ -17,11 +17,15 @@ export const TypeContextProvider = (props) => {
 
 
   const [employees, setEmployees] = useState([]);
-  const [userType, setUserType] = useState(null);
-  const [typeText, setTypeText] = useState(null);
+  const [userType, setUserType] = useState(false);
+  const [typeText, setTypeText] = useState(false);
   // const [isCheckedIn, setIsCheckedIn] = useState(false)
   const handleUserType = (value) => {
-    setUserType(parseInt(value));
+    if (value === false) {
+      setUserType(false)
+    } else {
+      setUserType(value)
+    }
     setTypeText(value);
   }
   useEffect(() => {
@@ -37,13 +41,17 @@ export const TypeContextProvider = (props) => {
 
 
   const handleEmployeeClick = (employeeId) => {
+    const now = new Date();
     const updatedEmployees = employees.map(employee =>
       parseInt(employee.employeeId) === parseInt(employeeId)
-        ? { ...employee, checkedIn: !employee.checkedIn }
+        ? {
+          ...employee,
+          checkedIn: !employee.checkedIn,
+          time: employee.checkedIn ? employee.time : now.toString()
+        }
         : employee
     );
-    console.log(updatedEmployees);
-    console.log(employeeId);
+    console.log('Updated Employees:', updatedEmployees);
     fetch(`https://64020dfe3779a86262641f9e.mockapi.io/days/2`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
@@ -53,6 +61,7 @@ export const TypeContextProvider = (props) => {
       .then(data => setEmployees(data.employees))
       .catch(error => console.error(error));
   };
+
 
 
   return <TypeContext.Provider value={{

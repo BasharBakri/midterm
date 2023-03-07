@@ -7,7 +7,6 @@ export const getOpenState = async () => {
   });
   if (response.ok) {
     const resData = await response.json();
-    console.log(resData);
     return resData;
   } else {
     throw json({ message: 'Could not fetch items' }, { status: 500 })

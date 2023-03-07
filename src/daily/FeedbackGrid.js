@@ -1,10 +1,13 @@
 import FeedBackPost from "./FeedbackPost";
+import TaskFeedBack from "./TaskFeedBack";
 import { useRouteLoaderData } from "react-router-dom";
 
 
 function FeedBackGrid() {
 
-  const dailyFeedback = useRouteLoaderData('getDayFeedBack');
+  const info = useRouteLoaderData('root');
+  const dailyFeedback = info.dayFeedBack;
+
 
   const allGeneralRating = dailyFeedback.map((oneFeed) => {
     return parseInt(oneFeed.generalrating)
@@ -23,6 +26,7 @@ function FeedBackGrid() {
     <br></br>
     <br></br>
     <FeedBackPost dailyFeedback={dailyFeedback} />
+    <TaskFeedBack />
   </>)
 }
 

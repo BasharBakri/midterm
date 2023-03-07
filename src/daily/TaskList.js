@@ -1,8 +1,8 @@
 import SingleTask from "./SingleTask";
 import { useRouteLoaderData } from "react-router-dom";
 function TaskList() {
-  const tasks = useRouteLoaderData('tasklist');
-  console.log(tasks);
+  const info = useRouteLoaderData('root');
+  const tasks = info.tasks
 
 
 
@@ -11,7 +11,7 @@ function TaskList() {
 
 
   return (
-    <ul>
+    <ul className="checkBoxContainer">
       <SingleTask tasks={tasks} />
     </ul>
   )

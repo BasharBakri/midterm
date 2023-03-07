@@ -7,7 +7,7 @@ export const getDailyTasks = async () => {
   });
   if (response.ok) {
     const resData = await response.json();
-    return resData.tasks;
+    return resData;
   } else {
     throw json({ message: 'Could not fetch items' }, { status: 500 })
   }

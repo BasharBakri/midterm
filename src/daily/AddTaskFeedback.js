@@ -15,7 +15,7 @@ function AddTaskFeedback() {
         <label htmlFor={`taskRating`}>Please rate this Task: {task.task}</label>
         <input id={`taskRating-${task.taskId}`} type="range" min={0} max={5} name={`taskRating`} required />
         <input id={`taskTextFeedBack`} type="text" name={`taskTextFeedBack`} required />
-        <input type="hidden" name="taskId" value={task.taskId} />
+        <input type="hidden" name="taskId" value={task.task} />
       </p>
     )
 
