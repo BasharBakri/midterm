@@ -2,24 +2,24 @@ function FeedBackPost({ dailyFeedback }) {
 
 
   const feedBackSocialText = dailyFeedback.map((oneFeed, index) => {
-    return (<div key={oneFeed.id}>
+    return (<p key={Math.random()}>
       {oneFeed.socialtext}
-    </div>)
+    </p>)
 
   })
 
   const feedBackGeneralText = dailyFeedback.map((oneFeed, index) => {
-    return (<div key={oneFeed.id}>
+    return (<p key={Math.random()}>
       {oneFeed.generaltext}
-    </div>)
+    </p>)
 
   })
 
   return (<div>
     <h3>Genreral feedback for today:</h3>
-    <p>{feedBackGeneralText}</p>
+    <div>{feedBackGeneralText}</div>
     <h3>Social feedback for today:</h3>
-    <p>{feedBackSocialText}</p>
+    <div>{feedBackSocialText}</div>
   </div>)
 
 

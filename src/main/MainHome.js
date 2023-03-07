@@ -1,9 +1,11 @@
 import CheckIn from "./CheckIn";
 import { useContext } from "react";
 import TypeContext from "../context/userType";
+import EmployeeList from "./EmployeeList";
 
 function MainHome() {
-  const typeName = useContext(TypeContext)
+  const typeName = useContext(TypeContext);
+
 
 
   return (<>
@@ -12,6 +14,7 @@ function MainHome() {
       <h4>Welcome {typeName.typeText}</h4>
       <p>Today is {new Date().toLocaleDateString('en-us', { weekday: "long", year: "numeric", month: "short", day: "numeric" })}</p>
       <CheckIn></CheckIn>
+      <EmployeeList />
 
     </div>
   </>)

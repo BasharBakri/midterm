@@ -1,46 +1,68 @@
 import React from "react";
 import { useState } from "react";
-
-
+import { useEffect } from "react";
 const TypeContext = React.createContext({
   userType: null,
   typeText: '',
-  checkInOpen: null,
   isCheckedIn: null,
   handleIsCheckedIn: () => { },
   changeType: () => { },
-  openCheckIn: () => { }
 });
+
+
+
 
 export const TypeContextProvider = (props) => {
 
 
 
+  const [employees, setEmployees] = useState([]);
+  const [userType, setUserType] = useState(null);
+  const [typeText, setTypeText] = useState(null);
+  // const [isCheckedIn, setIsCheckedIn] = useState(false)
+  const handleUserType = (value) => {
+    setUserType(parseInt(value));
+    setTypeText(value);
+  }
+  useEffect(() => {
+    fetch('https://64020dfe3779a86262641f9e.mockapi.io/days/2')
+      .then(response => response.json())
+      .then(data => {
+        // Get the employees array from the second object in the data array
+        const employees = data.employees;
+        console.log(employees);
+        setEmployees(employees);
+      })
+      .catch(error => console.error(error));
+  }, []);
 
-  const [checkInOpen, setcheckInOpen] = useState(false);
-  const [userType, setUserType] = useState(true);
-  const [typeText, setTypeText] = useState('employee');
-  const [isCheckedIn, setIsCheckedIn] = useState(false)
-  const handleUserType = () => {
-    setUserType(prevType => !prevType);
-    setTypeText(typeText => typeText === 'employee' ? 'manager' : 'employee'
+
+  const handleEmployeeClick = (employeeId) => {
+    // Find the employee with the matching ID and toggle their checkedIn value
+    const updatedEmployees = employees.map(employee =>
+      parseInt(employee.employeeId) === parseInt(employeeId)
+        ? { ...employee, checkedIn: !employee.checkedIn }
+        : employee
     );
-  }
+    console.log(updatedEmployees);
+    console.log(employeeId);
+    // Update the API with the updated employees array
+    fetch(`https://64020dfe3779a86262641f9e.mockapi.io/days/2`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ employees: updatedEmployees })
+    })
+      .then(response => response.json())
+      .then(data => setEmployees(data.employees))
+      .catch(error => console.error(error));
+  };
 
-  const handleOpenCheckIn = () => {
-    setcheckInOpen(prevCheckIn => !prevCheckIn)
-  }
-  const handleIsCheckedIn = () => {
-    setIsCheckedIn(prevCheckIn => !prevCheckIn)
-  }
 
   return <TypeContext.Provider value={{
     userType: userType,
     typeText: typeText,
-    checkInOpen: checkInOpen,
-    isCheckedIn: isCheckedIn,
-    handleIsCheckedIn: handleIsCheckedIn,
-    openCheckIn: handleOpenCheckIn,
+    // isCheckedIn: isCheckedIn,
+    handleIsCheckedIn: handleEmployeeClick,
     changeType: handleUserType
   }}>
     {props.children}

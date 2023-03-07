@@ -1,13 +1,13 @@
 import { json } from "react-router-dom";
 
-export const getDayFeedBack = async () => {
+export const getDailyTasks = async () => {
   const response = await fetch('https://64020dfe3779a86262641f9e.mockapi.io/days/2', {
     method: 'GET',
     headers: { 'content-type': 'application/json' },
   });
   if (response.ok) {
     const resData = await response.json();
-    return resData.dayFeedBack;
+    return resData.tasks;
   } else {
     throw json({ message: 'Could not fetch items' }, { status: 500 })
   }

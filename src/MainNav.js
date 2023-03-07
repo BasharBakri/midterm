@@ -42,9 +42,16 @@ export default function MainNav() {
             }>Authentication</NavLink>
           </li>
           <li>
-
-            <button onClick={type.changeType} className="mainNavButton">{type.typeText}</button>
-
+            <button onClick={() => { type.changeType(4) }} className="mainNavButton">Manager</button>
+          </li>
+          <li>
+            <button onClick={() => { type.changeType(1) }} className="mainNavButton">employee 1</button>
+          </li>
+          <li>
+            <button onClick={() => { type.changeType(2) }} className="mainNavButton">employee 2</button>
+          </li>
+          <li>
+            <button onClick={() => { type.changeType(3) }} className="mainNavButton">employee 3</button>
           </li>
         </ul>
       </nav>

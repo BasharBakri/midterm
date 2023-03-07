@@ -1,5 +1,4 @@
-import { Form } from 'react-router-dom';
-
+import { Form, Link } from 'react-router-dom';
 
 function AuthForm() {
 
@@ -16,7 +15,11 @@ function AuthForm() {
           <label htmlFor="image">Password</label>
           <input id="password" type="password" name="password" required />
         </p>
+
         <div >
+          <Link to='/?1'>
+            1
+          </Link>
           <button>Save</button>
         </div>
       </Form>

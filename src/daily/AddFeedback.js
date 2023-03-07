@@ -7,7 +7,7 @@ export default function AddFeedback() {
   const isSubmitting = navigation.state === 'submitting'
 
 
-  return <Form method="post" >
+  return <Form method="put" >
     <p>
       <label htmlFor="socialtext"> How was the social atmosphere? </label>
       <input id="socialtext" type="text" name="socialtext" required />
@@ -26,6 +26,7 @@ export default function AddFeedback() {
     </p>
 
     <div >
+
       <button disabled={isSubmitting}>{isSubmitting ? 'Submitting' : 'Save'}</button>
     </div>
 
