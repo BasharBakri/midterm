@@ -28,7 +28,6 @@ export const TypeContextProvider = (props) => {
     fetch('https://64020dfe3779a86262641f9e.mockapi.io/days/2')
       .then(response => response.json())
       .then(data => {
-        // Get the employees array from the second object in the data array
         const employees = data.employees;
         console.log(employees);
         setEmployees(employees);
@@ -38,7 +37,6 @@ export const TypeContextProvider = (props) => {
 
 
   const handleEmployeeClick = (employeeId) => {
-    // Find the employee with the matching ID and toggle their checkedIn value
     const updatedEmployees = employees.map(employee =>
       parseInt(employee.employeeId) === parseInt(employeeId)
         ? { ...employee, checkedIn: !employee.checkedIn }
@@ -46,7 +44,6 @@ export const TypeContextProvider = (props) => {
     );
     console.log(updatedEmployees);
     console.log(employeeId);
-    // Update the API with the updated employees array
     fetch(`https://64020dfe3779a86262641f9e.mockapi.io/days/2`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
