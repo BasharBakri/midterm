@@ -1,24 +1,37 @@
-import { Link, useRouteLoaderData } from "react-router-dom"
+import { useRouteLoaderData, useNavigate } from "react-router-dom"
 import TypeContext from "../context/userType";
 import { useContext } from "react";
 import { openCurrentDay } from "../APIs/openCurrentDay";
+import { Form } from "react-router-dom";
 
 function CheckIn() {
-  const type = useContext(TypeContext)
+  const type = useContext(TypeContext);
+  const navigate = useNavigate();
+
+
+
+  const currentUserNo = parseInt(type.userType);
   const info = useRouteLoaderData('root');
   const openSatus = info.isOpen;
 
-
+  const employees = info.employees;
+  const currentEmployee = employees.filter(function (employee) {
+    return parseInt(employee.employeeId) === currentUserNo;
+  });
+  let isCheckedIn = currentEmployee[0].checkedIn;
+  console.log(isCheckedIn);
 
 
 
   return (<>
-    {(type.userType === 1 || 2 || 3) && openSatus && <Link to='daily'>
-      <button onClick={() => { type.handleIsCheckedIn(type.userType) }} >Check In for the day</button>
-    </Link>}
-    {type.userType === 4 && !openSatus &&
-      <button onClick={openCurrentDay} >Open Check In for the day</button>
+    {(currentUserNo === 1 || currentUserNo === 2 || currentUserNo === 3) && openSatus && !isCheckedIn &&
+      <button className="bodyButtons" onClick={() => { type.handleIsCheckedIn(currentUserNo); navigate("daily") }} >Check In for the day</button>
     }
+    <Form >
+      {currentUserNo === 4 && !openSatus &&
+        <button className="bodyButtons" onClick={openCurrentDay} >Open Check In for the day</button>
+      }
+    </Form>
   </>)
 }
 

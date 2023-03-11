@@ -1,20 +1,32 @@
 import { Form, useNavigation } from "react-router-dom"
 import { useRouteLoaderData } from "react-router-dom";
+import { useContext } from "react";
+import TypeContext from "../context/userType";
+
 function AddTaskFeedback() {
   const navigation = useNavigation();
-  const tasks = useRouteLoaderData('tasklist');
-  console.log(tasks);
-
-
   const isSubmitting = navigation.state === 'submitting'
+  const info = useRouteLoaderData('tasklist');
+  const tasks = info.tasks;
+  console.log(tasks);
+  const type = useContext(TypeContext)
+  const currentUserNumber = parseInt(type.userType);
 
-  const allTaskFeedBacks = tasks.map((task) => {
+
+  const filteredTasks = tasks.filter((task) => parseInt(task.employeeId) === currentUserNumber);
+
+  console.log(filteredTasks);
+  const allTaskFeedBacks = filteredTasks.map((task) => {
     return (
 
       <p key={task.taskId}>
-        <label htmlFor={`taskRating`}>Please rate this Task: {task.task}</label>
+        <label className="mainLabel" htmlFor={`taskRating`}>What do you think of this task? </label>
+        <hr></hr>
+        <p>{task.task}</p>
         <input id={`taskRating-${task.taskId}`} type="range" min={0} max={5} name={`taskRating`} required />
-        <input id={`taskTextFeedBack`} type="text" name={`taskTextFeedBack`} required />
+        <hr></hr>
+        <label className="mainLabel" htmlFor={`taskTextFeedBack`}>Why?</label>
+        <input id={`taskTextFeedBack`} type="text" name={`taskTextFeedBack`} defaultValue='' required />
         <input type="hidden" name="taskId" value={task.task} />
       </p>
     )
@@ -22,10 +34,10 @@ function AddTaskFeedback() {
   });
 
   return (<>
-    <Form method="post" >
+    <Form className="dailytaskFeedBack" method="post" >
       {allTaskFeedBacks}
       <div >
-        <button disabled={isSubmitting}>{isSubmitting ? 'Submitting' : 'Save'}</button>
+        <button className="bodyButtons" disabled={isSubmitting}>{isSubmitting ? 'Submitting' : 'Save'}</button>
       </div>
     </Form>
   </>

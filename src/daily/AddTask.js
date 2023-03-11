@@ -12,15 +12,15 @@ export default function AddTask() {
   const isSubmitting = navigation.state === 'submitting'
 
 
-  return <Form method="put" >
+  return <Form className="addTaskForm" method="put" >
     <p>
-      <label htmlFor="task"> Add today's task </label>
+      <label htmlFor="task"> Add a task: </label>
       <input id="task" type="text" name="task" required />
     </p>
     <input id="employeeId" type="hidden" name="employeeId" value={selectedEmployeeId} readOnly={true} />
     <div>
-      <label > Assign Employee by Id </label>
-      <select value={selectedEmployeeId} onChange={handleEmployeeChange} required>
+      <label > Assign task to employee: </label>
+      <select className="selectEmployee" value={selectedEmployeeId} onChange={handleEmployeeChange} required>
 
         <option value="1" >Blake</option>
 
@@ -32,7 +32,7 @@ export default function AddTask() {
 
     </div>
     <div >
-      <button disabled={isSubmitting}>{isSubmitting ? 'Adding' : 'Add'}</button>
+      <button className="bodyButtons" disabled={isSubmitting}>{isSubmitting ? 'Adding' : `Add >`}</button>
     </div>
   </Form>
 }

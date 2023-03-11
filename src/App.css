@@ -1,9 +1,9 @@
 body,
 html {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #e2e2e2;
+  background-color: #ffffff;
   height: 98vh;
 }
 
@@ -97,6 +97,48 @@ html {
   margin-left: 2.5rem;
 }
 
+/* @media screen and (max-width: 900px) {
+  .mainContentContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+} */
+
+
+hr {
+  margin: 1rem 1rem 1rem 0rem;
+}
+
+/* body items */
+
+.currentDateParagpraph {
+  font-style: italic;
+  font-size: 0.8rem;
+  color: #888888;
+}
+
+.bodyButtons {
+  background: transparent;
+  border-radius: 10px;
+  padding: 0.6rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  border: #888888 0.3px solid;
+  color: #9c0000;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bodyButtons:active {
+  background-color: #000000;
+}
+
+
 
 /* Employee table */
 
@@ -104,40 +146,141 @@ html {
 .employeeTable {
   border-collapse: collapse;
   border: solid 1px black;
+  margin-top: 2rem;
+  border-left: solid 1rem #9c0000;
+  color: #9c0000;
+  text-align: center;
 }
 
-.employeeTable td,
-th {
-  padding: 0.2rem;
-  border: solid 1px black;
+.employeeTable td {
+  padding: 0.5rem;
+  border: #888888 0.3px solid;
 }
 
+.employeeTable th {
+  padding: 0.8rem;
+  border: #888888 0.3px solid;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
 
-.employeeTable tr:nth-child(even),
-th {
+.offline {
   background-color: #9c0000;
-
+  color: white;
 }
 
-.employeeTable tr:nth-child(odd) {
-  background-color: #e2e2e2;
-  color: #0f0f0f;
+/* Add Task Form */
 
+.addTaskForm {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  border: #000000 solid 0.3px;
+  width: 300px;
+  padding: 1rem;
+  border-radius: 10px;
 }
 
 
-/*
+.addTaskForm label {
+  font-size: 0.8rem;
+  color: #888888;
+  margin: 0.1rem;
+}
 
-task list css
+.addTaskForm input {
+  font-size: 0.8rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: #888888;
+  margin: 0.1rem;
+}
 
-*/
+.selectEmployee {
+  margin-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.addTaskForm button {
+  margin-right: auto;
+}
+
+
+.dailyFeedBackForm {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  border: #000000 solid 0.3px;
+  width: 300px;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.dailyFeedBackForm label {
+  font-size: 0.6rem;
+  font-style: italic;
+  color: #888888;
+}
+
+.dailyFeedBackForm .mainLabel {
+  font-size: 1rem;
+  font-style: normal;
+  color: #9c0000;
+  margin-right: 100%;
+}
+
+.dailyFeedBackForm input {
+  margin-top: 1rem;
+}
+
+
+/* daily task feedback form */
+
+.dailytaskFeedBack {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  border: #000000 solid 0.3px;
+  width: 300px;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.dailytaskFeedBack .mainLabel {
+  font-size: 1rem;
+  font-style: normal;
+  color: #9c0000;
+  display: block;
+}
+
+/* manager TaskLIST */
+
+
+.managerTasks {
+
+  margin: 1rem;
+  border: #000000 solid 0.3px;
+  width: 200px;
+  padding: 1rem;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.managerTasks img {
+  width: 90px;
+}
+
+
+
+/* Employee task list css*/
 
 .checkBoxContainer {
   padding: 15px;
   list-style: none;
   border: 1px solid #9c0000;
   background-color: #ffffff;
-  border-radius: 12px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   gap: 12px;

@@ -3,12 +3,13 @@ import { useRouteLoaderData } from "react-router-dom"
 
 export default function TaskFeedBack() {
 
-  const info = useRouteLoaderData('taskFeed')
-  console.log(info);
+  const info = useRouteLoaderData('root');
 
-  const taskFeedCard = info.map((task) => {
+  const dailyTaskFeedBack = info.taskFeedBack;
 
-    return (<div key={task.id}>
+  const taskFeedCard = dailyTaskFeedBack.map((task) => {
+
+    return (<div key={task.taskTextFeedBack}>
       <p>
         Task Name: {task.taskId}
       </p>

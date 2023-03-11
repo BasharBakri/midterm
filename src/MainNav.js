@@ -5,7 +5,7 @@ import TypeContext from "./context/userType"
 
 export default function MainNav() {
 
-
+  // const userType = parseInt(localStorage.getItem('userType'));
 
 
   const type = useContext(TypeContext)

@@ -17,7 +17,6 @@ import DailyRoot from './DailyRoot';
 
 import { addDayFeedBack } from './APIs/addDayFeedBack';
 import { getDailyTasks } from './APIs/getDailyTasks';
-import { getTaskFeedBackFunc } from './APIs/getTaskFeedBackFunc';
 
 
 const router = createBrowserRouter([
@@ -36,7 +35,7 @@ const router = createBrowserRouter([
           },
           { path: 'addtaskfeedback', element: <AddTaskFeedback />, action: addTaskFeedBackFunc },
           {
-            path: 'feedback', element: <FeedBackGrid />, loader: getTaskFeedBackFunc, id: 'taskFeed',
+            path: 'feedback', element: <FeedBackGrid />
           },
         ]
       },
@@ -47,6 +46,7 @@ const router = createBrowserRouter([
 
 //manager createDay, openDay, createTask, assign task to employee 
 // worker task: isComplete, isWorking, leavefeedback: (at the end)
+// Socket io, which is mabniye 3ala backend
 
 function App() {
 

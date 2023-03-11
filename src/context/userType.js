@@ -21,15 +21,11 @@ export const TypeContextProvider = (props) => {
   const [typeText, setTypeText] = useState(false);
   // const [isCheckedIn, setIsCheckedIn] = useState(false)
   const handleUserType = (value) => {
-    if (value === false) {
-      setUserType(false)
-    } else {
-      setUserType(value)
-    }
+    setUserType(value)
     setTypeText(value);
   }
   useEffect(() => {
-    fetch('https://64020dfe3779a86262641f9e.mockapi.io/days/2')
+    fetch('https://64020dfe3779a86262641f9e.mockapi.io/days/4')
       .then(response => response.json())
       .then(data => {
         const employees = data.employees;
@@ -52,7 +48,7 @@ export const TypeContextProvider = (props) => {
         : employee
     );
     console.log('Updated Employees:', updatedEmployees);
-    fetch(`https://64020dfe3779a86262641f9e.mockapi.io/days/2`, {
+    fetch(`https://64020dfe3779a86262641f9e.mockapi.io/days/4`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ employees: updatedEmployees })

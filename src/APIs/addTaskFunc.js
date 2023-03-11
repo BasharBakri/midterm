@@ -13,7 +13,7 @@ export const addTaskfunc = async ({ request, params }) => {
     isComplete: false,
   }
 
-  const response = await fetch(`https://64020dfe3779a86262641f9e.mockapi.io/days/2`);
+  const response = await fetch(`https://64020dfe3779a86262641f9e.mockapi.io/days/4`);
   const existingData = await response.json();
 
   const updatedData = {
@@ -23,14 +23,14 @@ export const addTaskfunc = async ({ request, params }) => {
   console.log(updatedData);
 
 
-  const putResponse = await fetch(`https://64020dfe3779a86262641f9e.mockapi.io/days/2`, {
+  const putResponse = await fetch(`https://64020dfe3779a86262641f9e.mockapi.io/days/4`, {
     method: 'PUT',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify(updatedData)
   });
   console.log(putResponse);
   if (!putResponse.ok) {
-    throw json({ message: 'Could not send feedBack' }, { status: 400 })
+    throw json({ message: 'Could not send Tasks' }, { status: 400 })
   } else {
     return redirect('')
   }

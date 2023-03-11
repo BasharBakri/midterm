@@ -31,4 +31,4 @@ function FeedBackGrid() {
 }
 
 
-export default FeedBackGrid
+export default FeedBackGrid;

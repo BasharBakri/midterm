@@ -7,13 +7,16 @@ function EmployeeCard() {
   const employees = info.employees;
 
   const employeesCard = employees.map((employee) => {
+    if (parseInt(employee.employeeId) === 4) {
+      return null;
+    }
     const timeString = isNaN(new Date(employee.time)) ? '' : new Date(employee.time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     return (
       <tr key={employee.employeeId}>
         <td>{employee.name}</td>
         <td><img src={employee.image} alt={employee.name} /></td>
         <td>{timeString}</td>
-        <td>{employee.checkedIn ? 'Checked In' : 'Offline'}</td>
+        <td className={employee.checkedIn ? 'checkedIn' : 'offline'}>{employee.checkedIn ? 'Checked In' : 'Offline'}</td>
       </tr>
     );
   });
