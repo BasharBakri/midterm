@@ -39,7 +39,7 @@ function MainHome() {
 
     <CheckIn></CheckIn>
 
-    {currentUserNo === 4 && !openSatus && <Link className="feedBackLink" to={'daily'}> Add tasks to employees: <GrFormNextLink className="feedBackLink" /></Link>}
+    {currentUserNo === 4 && openSatus && <Link className="feedBackLink" to={'daily'}> Add tasks to employees: <GrFormNextLink className="feedBackLink" /></Link>}
   </>)
 }
 
