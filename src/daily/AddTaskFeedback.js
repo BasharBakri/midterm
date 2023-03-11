@@ -19,7 +19,7 @@ function AddTaskFeedback() {
   const allTaskFeedBacks = filteredTasks.map((task) => {
     return (
 
-      <p key={task.taskId}>
+      <div className="taskFeedBackContainerNoButton" key={task.taskId}>
         <label className="mainLabel" htmlFor={`taskRating`}>What do you think of this task? </label>
         <hr></hr>
         <p>{task.task}</p>
@@ -28,7 +28,7 @@ function AddTaskFeedback() {
         <label className="mainLabel" htmlFor={`taskTextFeedBack`}>Why?</label>
         <input id={`taskTextFeedBack`} type="text" name={`taskTextFeedBack`} defaultValue='' required />
         <input type="hidden" name="taskId" value={task.task} />
-      </p>
+      </div>
     )
 
   });

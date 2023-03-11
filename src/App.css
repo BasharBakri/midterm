@@ -46,17 +46,6 @@ html {
   color: #9c0000;
 }
 
-.ulNavButton {
-  cursor: pointer;
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  border-radius: 50%;
-  height: 4rem;
-  width: 4rem;
-  color: #9c0000;
-}
 
 
 /* Login */
@@ -103,7 +92,10 @@ html {
   border: #9c0000 solid 1px;
 }
 
-
+.loginItem {
+  display: flex;
+  flex-direction: column;
+}
 
 
 
@@ -157,12 +149,9 @@ html {
 }
 
 .btnBtnText {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
-.sales {
-  margin-left: 0.5rem;
-}
 
 
 /* main main  */
@@ -186,6 +175,9 @@ hr {
   margin: 1rem 1rem 1rem 0rem;
 }
 
+.welcomeImage {
+  width: 40px;
+}
 
 
 /* body items */
@@ -214,6 +206,9 @@ hr {
   background-color: #000000;
 }
 
+#openCheckIn {
+  margin-bottom: 1rem;
+}
 
 .feedBackLink {
   color: #9c0000;
@@ -236,13 +231,15 @@ hr {
 .employeeTable td {
   padding: 0.5rem;
   border: #888888 0.3px solid;
+  font-size: 0.8rem;
+
 }
 
 .employeeTable th {
-  padding: 0.8rem;
+  padding: 0.9rem;
   border: #888888 0.3px solid;
-  font-size: 0.9rem;
-  font-weight: 500;
+  font-size: 0.8rem;
+  font-weight: 550;
 }
 
 .offline {
@@ -339,6 +336,18 @@ hr {
   display: block;
 }
 
+.dailytaskFeedBack input {
+  font-size: 0.8rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: #888888;
+  margin-top: 1rem;
+}
+
+.taskFeedBackContainerNoButton {
+  margin-bottom: 1rem;
+}
+
 
 /* manager TaskLIST */
 
@@ -346,7 +355,7 @@ hr {
 .managerTasks {
 
   margin: 1rem;
-  border: #000000 solid 0.3px;
+  border: #9c0000 solid 0.3px;
   width: 200px;
   padding: 1rem;
   border-radius: 10px;
@@ -362,7 +371,7 @@ hr {
 /* Employee task list css*/
 
 .checkBoxContainer {
-  padding: 15px;
+  padding: 5px;
   list-style: none;
   border: 1px solid #9c0000;
   background-color: #ffffff;
@@ -376,4 +385,38 @@ hr {
 .checkBoxContainer li {
   padding: 1rem;
   border-bottom: 1px solid #9c0000;
+}
+
+/* FeedBack container */
+.feedBackGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* feedback text list */
+
+.feedBackTextContainer {
+  border: 1px solid #9c0000;
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 250px;
+}
+
+
+/* Charts */
+
+
+.chartContainer {
+
+  width: 400px;
+  height: fit-content;
+  text-align: center;
+}
+
+.rating-text {
+  margin-top: 1rem;
 }

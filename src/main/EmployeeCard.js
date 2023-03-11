@@ -14,7 +14,7 @@ function EmployeeCard() {
     return (
       <tr key={employee.employeeId}>
         <td>{employee.name}</td>
-        <td><img src={employee.image} alt={employee.name} /></td>
+        <td><img className="welcomeImage" src={employee.image} alt={employee.name} /></td>
         <td>{timeString}</td>
         <td className={employee.checkedIn ? 'checkedIn' : 'offline'}>{employee.checkedIn ? 'Checked In' : 'Offline'}</td>
       </tr>

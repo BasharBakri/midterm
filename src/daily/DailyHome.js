@@ -9,6 +9,7 @@ import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { GrFormNextLink } from 'react-icons/gr'
 import { Form } from "react-router-dom";
 import SingleTaskManager from "./SingleTaskManager";
+import Welcome from "../main/Welcome";
 
 
 
@@ -27,15 +28,19 @@ function DailyHome() {
   let displayTime = new Date(checkInTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
   if (displayTime === 'Invalid Date') {
-    displayTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    displayTime = ''
   }
 
+  console.log(currentIsCheckedIn);
 
 
   return (<>
-    {(currentUserNo === 1 || currentUserNo === 2 || currentUserNo === 3) && openSatus && <p className="currentDateParagpraph">Check In Time: {displayTime}.</p>}
+    <Welcome />
 
-    <hr></hr>
+    {(currentUserNo === 1 || currentUserNo === 2 || currentUserNo === 3) && openSatus && currentIsCheckedIn && <p className="currentDateParagpraph">Check In Time: {displayTime}.</p>}
+    {(currentUserNo === 1 || currentUserNo === 2 || currentUserNo === 3) && openSatus && currentIsCheckedIn && <hr></hr>}
+
+
 
 
     {currentUserNo === 4 && !openSatus && <Link className="feedBackLink" to={'feedback'}>View Today's Feedback<GrFormNextLink /></Link>}
@@ -46,7 +51,7 @@ function DailyHome() {
     {(currentUserNo === 1 || currentUserNo === 2 || currentUserNo === 3) && openSatus && <TaskList />}
     {currentUserNo === 4 && openSatus && <SingleTaskManager />}
 
-    {(currentUserNo === 1 || currentUserNo === 2 || currentUserNo === 3 || currentUserNo === false) && !openSatus && currentIsCheckedIn && <button className="bodyButtons" onClick={() => { type.handleIsCheckedIn(currentUserNo) }}>Check Out for the day</button>}
+    {(currentUserNo === 1 || currentUserNo === 2 || currentUserNo === 3 || currentUserNo === false) && !openSatus && currentIsCheckedIn && <Link to='addfeedback'><button className="bodyButtons" onClick={() => { type.handleIsCheckedIn(currentUserNo) }}>Check Out for the day</button></Link>}
 
     {openSatus && type.userType === 4 &&
       <Form method="get">

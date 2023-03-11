@@ -36,7 +36,7 @@ export default function MainNav() {
               </NavLink>
             </li>
             <li>
-              <button onClick={() => { type.changeType(false) }} className="ulNavButton">LOG OUT</button>
+              <button onClick={() => { type.changeType(false) }} className="resetBtn">Log out</button>
             </li>  </>
 
         </ul>

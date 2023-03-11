@@ -5,7 +5,9 @@ import EmployeeList from "./EmployeeList";
 import { useRouteLoaderData } from "react-router-dom";
 import { useEffect } from "react";
 import { useRevalidator } from "react-router-dom";
-
+import Welcome from "./Welcome";
+import { Link } from "react-router-dom";
+import { GrFormNextLink } from 'react-icons/gr'
 function MainHome() {
   // const type = parseInt(localStorage.getItem('userType'));
 
@@ -13,28 +15,12 @@ function MainHome() {
   const type = useContext(TypeContext);
   const info = useRouteLoaderData('root')
   const openSatus = info.isOpen;
+  const currentUserNo = parseInt(type.userType)
 
 
 
 
-  let name;
-  switch (parseInt(type.userType)) {
-    case 4:
-      name = 'Robert';
-      break;
-    case 1:
-      name = 'Blake';
-      break;
-    case 2:
-      name = 'Lucy';
-      break;
-    case 3:
-      name = 'Red';
-      break;
-    default:
-      name = '';
-      break;
-  }
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       console.log('Interval is running');
@@ -45,19 +31,15 @@ function MainHome() {
     }, 3000);
 
     return () => clearInterval(intervalId);
-  }, []);
+  }, [revalidator]);
 
   return (<>
-    <div>
-      <h3>Hey There {name}, Happy to see you here</h3>
+    <Welcome />
+    {openSatus && parseInt(type.userType) === 4 && <EmployeeList />}
 
-      <p className="currentDateParagpraph"> {new Date().toLocaleDateString('en-us', { weekday: "long", year: "numeric", month: "short", day: "numeric" })}.</p>
-      <hr></hr>
-      {openSatus && parseInt(type.userType) === 4 && <EmployeeList />}
+    <CheckIn></CheckIn>
 
-      <CheckIn></CheckIn>
-
-    </div>
+    {currentUserNo === 4 && !openSatus && <Link className="feedBackLink" to={'daily'}> Add tasks to employees: <GrFormNextLink className="feedBackLink" /></Link>}
   </>)
 }
 

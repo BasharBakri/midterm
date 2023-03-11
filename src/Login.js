@@ -35,7 +35,7 @@ export default function Login() {
         <span className="btnText"><i className="btnBtnText"> 'Logistics'</i></span>
       </div>
       <Form className="resetForm"  >
-        <button className="resetBtn" onClick={resetCurrentDay}>Start a new day!</button>
+        <button className="resetBtn" onClick={resetCurrentDay}>Refresh the day!</button>
       </Form>
     </div>
 

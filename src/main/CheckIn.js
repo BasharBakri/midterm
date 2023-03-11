@@ -29,7 +29,7 @@ function CheckIn() {
     }
     {currentUserNo === 4 && !openSatus &&
       <Form method="get">
-        <button className="bodyButtons" onClick={openCurrentDay} >Open Check In for the day</button>
+        <button className="bodyButtons" id="openCheckIn" onClick={openCurrentDay} >Open Check In for the day</button>
       </Form>
     }
   </>)

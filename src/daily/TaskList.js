@@ -18,7 +18,7 @@ function TaskList() {
     }, 3000);
 
     return () => clearInterval(intervalId);
-  }, []);
+  }, [revalidator]);
 
 
 

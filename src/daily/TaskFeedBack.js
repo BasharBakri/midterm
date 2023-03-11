@@ -9,7 +9,7 @@ export default function TaskFeedBack() {
 
   const taskFeedCard = dailyTaskFeedBack.map((task) => {
 
-    return (<div key={task.taskTextFeedBack}>
+    return (<div className="managerTasks" key={task.taskTextFeedBack}>
       <p>
         Task Name: {task.taskId}
       </p>
