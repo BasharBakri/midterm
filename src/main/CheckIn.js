@@ -27,11 +27,11 @@ function CheckIn() {
     {(currentUserNo === 1 || currentUserNo === 2 || currentUserNo === 3) && openSatus && !isCheckedIn &&
       <button className="bodyButtons" onClick={() => { type.handleIsCheckedIn(currentUserNo); navigate("daily") }} >Check In for the day</button>
     }
-    <Form >
-      {currentUserNo === 4 && !openSatus &&
+    {currentUserNo === 4 && !openSatus &&
+      <Form method="get">
         <button className="bodyButtons" onClick={openCurrentDay} >Open Check In for the day</button>
-      }
-    </Form>
+      </Form>
+    }
   </>)
 }
 

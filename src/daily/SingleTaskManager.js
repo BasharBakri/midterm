@@ -19,10 +19,10 @@ function SingleTaskManager() {
       <div className="managerTasks" key={task.taskId}>
         <span>{task.task}</span>
         <hr></hr>
-        <p>
+        <div className="assignedToContainer">
           <p className="currentDateParagpraph">Assigned to:</p>
           <img src={assignedTo} alt='employee' />
-        </p>
+        </div>
       </div>
     );
   });

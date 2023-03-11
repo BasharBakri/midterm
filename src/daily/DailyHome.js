@@ -6,6 +6,7 @@ import { useRouteLoaderData } from "react-router-dom";
 import TaskList from "./TaskList";
 import AddTask from "./AddTask";
 import { AiOutlineCloseCircle } from 'react-icons/ai';
+import { GrFormNextLink } from 'react-icons/gr'
 import { Form } from "react-router-dom";
 import SingleTaskManager from "./SingleTaskManager";
 
@@ -21,6 +22,7 @@ function DailyHome() {
     return parseInt(employee.employeeId) === currentUserNo;
   });
   let checkInTime = currentEmployee[0].time;
+  let currentIsCheckedIn = currentEmployee[0].checkedIn;
 
   let displayTime = new Date(checkInTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
@@ -29,15 +31,14 @@ function DailyHome() {
   }
 
 
-  console.log(currentUserNo);
-  console.log(openSatus);
+
   return (<>
     {(currentUserNo === 1 || currentUserNo === 2 || currentUserNo === 3) && openSatus && <p className="currentDateParagpraph">Check In Time: {displayTime}.</p>}
 
     <hr></hr>
 
 
-    {currentUserNo === 4 && !openSatus && <Link to={'feedback'}>Today's Feedback</Link>}
+    {currentUserNo === 4 && !openSatus && <Link className="feedBackLink" to={'feedback'}>View Today's Feedback<GrFormNextLink /></Link>}
 
 
 
@@ -45,13 +46,14 @@ function DailyHome() {
     {(currentUserNo === 1 || currentUserNo === 2 || currentUserNo === 3) && openSatus && <TaskList />}
     {currentUserNo === 4 && openSatus && <SingleTaskManager />}
 
-    {(currentUserNo === 1 || currentUserNo === 2 || currentUserNo === 3 || currentUserNo === false) && !openSatus && <Link to={'addfeedback'}><button className="bodyButtons" onClick={() => { type.handleIsCheckedIn(false) }}>Check Out for the day</button></Link>}
+    {(currentUserNo === 1 || currentUserNo === 2 || currentUserNo === 3 || currentUserNo === false) && !openSatus && currentIsCheckedIn && <button className="bodyButtons" onClick={() => { type.handleIsCheckedIn(currentUserNo) }}>Check Out for the day</button>}
 
     {openSatus && type.userType === 4 &&
-      <Form>
+      <Form method="get">
         <button className="bodyButtons" onClick={closeCurrentDay}>Close Check In &nbsp;  <AiOutlineCloseCircle />
         </button>
-      </Form>}
+      </Form>
+    }
 
   </>)
 }

@@ -59,7 +59,57 @@ html {
 }
 
 
+/* Login */
+
+.loginContainer {
+  background-color: black;
+  display: grid;
+  grid-template-columns: 1fr repeat(2, minmax(0, 1fr));
+  grid-template-rows: auto auto;
+  height: 100dvh;
+  height: 100vh;
+  justify-items: center;
+  /* center horizontally */
+
+}
+
+.loginContainer h2 {
+  color: white;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.5rem;
+  grid-column: 1 / -1;
+}
+
+.loginItem:nth-child(2) {
+  grid-column: 1 / -1;
+}
+
+.loginContainer .loginButton {
+
+  cursor: pointer;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+  color: #9c0000;
+
+}
+
+.loginContainer .loginButton:hover {
+  border: #9c0000 solid 1px;
+}
+
+
+
+
+
+
 .dread {
+
   background-image: url(./imgs/sr-avatar-dreadpirate.png);
 }
 
@@ -73,6 +123,30 @@ html {
 
 .red {
   background-image: url(./imgs/sr-avatar-redandwhite.png);
+}
+
+
+.resetForm {
+  grid-column: 1 / -1;
+}
+
+.resetBtn {
+  background: transparent;
+  border-radius: 10px;
+  padding: 0.6rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border: #9c0000 0.3px solid;
+  color: white;
+  text-align: center;
+}
+
+.resetBtn:hover {
+  background-color: #390404;
+}
+
+.resetBtn:active {
+  background-color: black;
 }
 
 .btnText {
@@ -112,6 +186,8 @@ hr {
   margin: 1rem 1rem 1rem 0rem;
 }
 
+
+
 /* body items */
 
 .currentDateParagpraph {
@@ -136,6 +212,11 @@ hr {
 
 .bodyButtons:active {
   background-color: #000000;
+}
+
+
+.feedBackLink {
+  color: #9c0000;
 }
 
 
@@ -231,6 +312,10 @@ hr {
 }
 
 .dailyFeedBackForm input {
+  font-size: 0.8rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  color: #888888;
   margin-top: 1rem;
 }
 
@@ -253,6 +338,7 @@ hr {
   color: #9c0000;
   display: block;
 }
+
 
 /* manager TaskLIST */
 
