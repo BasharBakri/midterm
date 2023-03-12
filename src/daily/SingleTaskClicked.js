@@ -1,11 +1,8 @@
-import { useRouteLoaderData, Link } from "react-router-dom";
-function SingleTaskManager() {
-
+import { useRouteLoaderData } from "react-router-dom";
+function SingleTaskClicked() {
 
   const info = useRouteLoaderData('root');
-  const tasks = info.tasks
-
-
+  const tasks = info.tasks;
 
   const taskItems = tasks.map((task) => {
     const assignedTo = parseInt(task.employeeId) === 1
@@ -16,14 +13,14 @@ function SingleTaskManager() {
           ? info.employees[2].image
           : '';
     return (
-      <Link to={`${task.taskId}`} className="managerTasks" key={task.taskId}>
+      <div to={`${task.taskId}`} className="managerTasks" key={task.taskId}>
         <span>{task.task}</span>
         <hr></hr>
         <div className="assignedToContainer">
           <p className="currentDateParagpraph">Assigned to:</p>
           <img src={assignedTo} alt='employee' />
         </div>
-      </Link>
+      </div>
     );
   });
 
@@ -34,4 +31,4 @@ function SingleTaskManager() {
   </>)
 }
 
-export default SingleTaskManager;
+export default SingleTaskClicked;

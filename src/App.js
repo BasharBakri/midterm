@@ -17,6 +17,7 @@ import DailyRoot from './DailyRoot';
 
 import { addDayFeedBack } from './APIs/addDayFeedBack';
 import { getDailyTasks } from './APIs/getDailyTasks';
+import SingleTaskClicked from './daily/SingleTaskClicked';
 
 
 const router = createBrowserRouter([
@@ -30,13 +31,16 @@ const router = createBrowserRouter([
         path: 'daily', element: <DailyRoot />, loader: getDailyTasks, id: 'tasklist',
         children: [
           { index: true, element: <DailyHome />, action: addTaskfunc, },
-          {
-            path: 'addfeedback', element: <AddFeedback />, action: addDayFeedBack,
-          },
+
           { path: 'addtaskfeedback', element: <AddTaskFeedback />, action: addTaskFeedBackFunc },
           {
             path: 'feedback', element: <FeedBackGrid />
           },
+          {
+            path: 'addfeedback', element: <AddFeedback />, action: addDayFeedBack,
+          }, {
+            path: ':feedbackId', element: <SingleTaskClicked />
+          }
         ]
       },
     ]

@@ -223,6 +223,7 @@ hr {
   border-collapse: collapse;
   border: solid 1px black;
   margin-top: 2rem;
+  margin-bottom: 2rem;
   border-left: solid 1rem #9c0000;
   color: #9c0000;
   text-align: center;
@@ -252,7 +253,7 @@ hr {
 .addTaskForm {
   display: flex;
   flex-direction: column;
-  margin: 1rem;
+  margin-bottom: 1rem;
   border: #000000 solid 0.3px;
   width: 300px;
   padding: 1rem;
@@ -353,17 +354,23 @@ hr {
 
 
 .managerTasks {
-
+  text-decoration: none;
   margin: 1rem;
   border: #9c0000 solid 0.3px;
   width: 200px;
   padding: 1rem;
   border-radius: 10px;
   display: inline-block;
+  color: #9c0000;
+}
+
+.managerTasks a:visited,
+.managerTasks a:link {
+  color: #9c0000;
 }
 
 .managerTasks img {
-  width: 90px;
+  width: 50px;
 }
 
 
