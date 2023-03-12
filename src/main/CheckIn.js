@@ -29,7 +29,7 @@ function CheckIn() {
       <button className="bodyButtons" onClick={() => { type.handleIsCheckedIn(currentUserNo); navigate("daily") }} >Check In for the day</button>
     }
     {currentUserNo === 4 && !openSatus &&
-      <Form method="get">
+      <Form method='get'>
         <button className="bodyButtons" id="openCheckIn" onClick={openCurrentDay} >Open Check In for the day &nbsp;  <AiOutlineCheckCircle /> </button>
       </Form>
     }

@@ -25,13 +25,13 @@ function MainHome() {
     const intervalId = setInterval(() => {
       console.log('Interval is running');
       console.log(revalidator.state);
-      if (revalidator.state === "idle") {
+      if (revalidator.state === 'idle') {
         revalidator.revalidate();
       }
-    }, 3000);
+    }, 500);
 
     return () => clearInterval(intervalId);
-  }, [revalidator]);
+  }, [revalidator, openSatus]);
 
   return (<>
     <Welcome />

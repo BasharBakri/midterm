@@ -22,6 +22,8 @@ function SingleTaskManager() {
         <div className="assignedToContainer">
           <p className="currentDateParagpraph">Assigned to:</p>
           <img src={assignedTo} alt='employee' />
+          <p className="currentDateParagpraph">Task completion status: </p>
+          <p className={task.isComplete ? 'checkedIn' : 'offline'}>{task.isComplete ? 'Done' : 'In Progress'}</p>
           <hr></hr>
           <p className="currentDateParagpraph">Click to view more details {">"}</p>
         </div>

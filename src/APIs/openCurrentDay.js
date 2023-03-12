@@ -13,7 +13,10 @@ export const openCurrentDay = async ({ request, params }) => {
   console.log(response);
   if (!response.ok) {
     throw json({ message: 'Could not send open the day' }, { status: 400 })
-  } return redirect('');
+  } else {
+    return redirect('/');
+
+  }
 };
 
 

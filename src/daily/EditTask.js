@@ -39,7 +39,7 @@ export default function EditTask() {
   const [selectedEmployeeId, setSelectedEmployeeId] = useState(displayFilteredTasks.employeeId);
 
 
-  const [isChecked, setIsChecked] = useState(displayFilteredTasks.isComplete);
+  const [isChecked, setIsChecked] = useState(Boolean(displayFilteredTasks.isComplete));
 
 
   const handleCheckboxChange = (event) => {
@@ -67,7 +67,8 @@ export default function EditTask() {
         </select>
         <div>
           <label htmlFor="isComplete"> Mark Task as complete:</label>
-          <input type='checkbox' name="isComplete" id="isComplete" value={isChecked} onChange={handleCheckboxChange} />
+          <input type='checkbox' name="isComplete" id="isComplete" checked={isChecked}
+            value={isChecked} onChange={handleCheckboxChange} />
         </div>
       </div>
       <hr></hr>
