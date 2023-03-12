@@ -11,7 +11,7 @@ function SingleTaskClicked() {
 
   const submit = useSubmit()
   function startDeleteHandler() {
-    const proceed = window.confirm('Are you sure?')
+    const proceed = window.confirm('Are you sure you want to delete this task?')
     if (proceed) {
       submit(null, { method: 'put' })
     }

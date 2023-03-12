@@ -122,6 +122,7 @@ html {
   grid-column: 1 / -1;
 }
 
+
 .resetBtn {
   background: black;
   border-radius: 10px;
@@ -218,6 +219,10 @@ hr {
   color: #9c0000;
 }
 
+.closeCheckInForm {
+  padding-bottom: 1rem;
+}
+
 
 
 /* Employee table */
@@ -272,10 +277,9 @@ hr {
 }
 
 .addTaskForm input {
-  font-size: 0.8rem;
+  font-size: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  color: #888888;
   margin: 0.1rem;
 }
 

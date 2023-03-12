@@ -53,11 +53,12 @@ function DailyHome() {
 
     {(currentUserNo === 1 || currentUserNo === 2 || currentUserNo === 3 || currentUserNo === false) && !openSatus && currentIsCheckedIn && <Link to='addfeedback'><button className="bodyButtons" onClick={() => { type.handleIsCheckedIn(currentUserNo) }}>Check Out for the day</button></Link>}
 
-    {openSatus && type.userType === 4 &&
+    {openSatus && type.userType === 4 && <div className="closeCheckInForm">
       <Form method="get">
         <button className="bodyButtons" id="closeCheckInBtn" onClick={closeCurrentDay}>Close Check In &nbsp;  <AiOutlineCloseCircle />
         </button>
       </Form>
+    </div>
     }
 
   </>)
