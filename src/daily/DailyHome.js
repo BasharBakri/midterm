@@ -55,7 +55,7 @@ function DailyHome() {
 
     {openSatus && type.userType === 4 &&
       <Form method="get">
-        <button className="bodyButtons" onClick={closeCurrentDay}>Close Check In &nbsp;  <AiOutlineCloseCircle />
+        <button className="bodyButtons" id="closeCheckInBtn" onClick={closeCurrentDay}>Close Check In &nbsp;  <AiOutlineCloseCircle />
         </button>
       </Form>
     }

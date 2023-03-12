@@ -1,4 +1,4 @@
-import { json } from "react-router-dom";
+import { json, redirect } from "react-router-dom";
 
 
 
@@ -13,7 +13,7 @@ export const openCurrentDay = async ({ request, params }) => {
   console.log(response);
   if (!response.ok) {
     throw json({ message: 'Could not send open the day' }, { status: 400 })
-  }
+  } return redirect('');
 };
 
 

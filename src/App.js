@@ -10,6 +10,7 @@ import AddTaskFeedback from './daily/AddTaskFeedback';
 import { getOpenState } from './APIs/getOpenState';
 import { addTaskfunc } from './APIs/addTaskFunc';
 import { addTaskFeedBackFunc } from './APIs/addTaskFeedBackFunc';
+import { deleteTask } from './APIs/deleteTask';
 
 import DailyRoot from './DailyRoot';
 // import ErrorPage from './ErrorPage';
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
           {
             path: 'addfeedback', element: <AddFeedback />, action: addDayFeedBack,
           }, {
-            path: ':feedbackId', element: <SingleTaskClicked />
+            path: ':singleTaskId', element: <SingleTaskClicked />, action: deleteTask,
           }
         ]
       },

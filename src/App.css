@@ -123,11 +123,11 @@ html {
 }
 
 .resetBtn {
-  background: transparent;
+  background: black;
   border-radius: 10px;
   padding: 0.6rem;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.8rem;
   border: #9c0000 0.3px solid;
   color: white;
   text-align: center;
@@ -152,6 +152,9 @@ html {
   font-size: 0.7rem;
 }
 
+.closeCheckInBtn {
+  margin-bottom: 1rem;
+}
 
 
 /* main main  */
@@ -200,6 +203,10 @@ hr {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.bodyButtons:hover {
+  background-color: #888888;
 }
 
 .bodyButtons:active {
@@ -355,8 +362,13 @@ hr {
 
 .managerTasks {
   text-decoration: none;
-  margin: 1rem;
-  border: #9c0000 solid 0.3px;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  border-top: #9c0000 solid 0.3px;
+  border-bottom: #9c0000 solid 0.3px;
+  border-left: #9c0000 solid 0.3px;
+  border-right: #9c0000 solid 0.3px;
   width: 200px;
   padding: 1rem;
   border-radius: 10px;
@@ -364,13 +376,53 @@ hr {
   color: #9c0000;
 }
 
-.managerTasks a:visited,
-.managerTasks a:link {
-  color: #9c0000;
+.managerTasks:hover {
+  color: #390404;
+  border-right: #9c0000 solid 3px;
 }
+
+
+
+
 
 .managerTasks img {
   width: 50px;
+}
+
+/* Single task clicked  */
+
+.singleTaskClicked {
+  text-decoration: none;
+  margin-top: 1rem;
+  border: #9c0000 solid 0.3px;
+  width: 200px;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+
+  color: #9c0000;
+}
+
+.singleTaskClicked a:visited,
+.singleTaskClicked a:link {
+  color: #9c0000;
+  text-decoration: none;
+}
+
+.singleTaskClicked a:hover {
+  color: #390404;
+  text-decoration: underline;
+}
+
+.singleTaskClicked img {
+  width: 50px;
+}
+
+.singleTaskButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 

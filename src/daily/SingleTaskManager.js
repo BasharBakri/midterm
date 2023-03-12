@@ -22,6 +22,8 @@ function SingleTaskManager() {
         <div className="assignedToContainer">
           <p className="currentDateParagpraph">Assigned to:</p>
           <img src={assignedTo} alt='employee' />
+          <hr></hr>
+          <p className="currentDateParagpraph">Click to view more details {">"}</p>
         </div>
       </Link>
     );
