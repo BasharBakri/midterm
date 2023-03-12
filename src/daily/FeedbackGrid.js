@@ -36,20 +36,22 @@ function FeedBackGrid() {
   }, [revalidator]);
 
 
-  return (<div className="feedBackGrid">
-    <h3>Genreral feedback for today:</h3>
-    <ul className="feedBackTextContainer">
-      <FeedBackPostGeneral dailyFeedback={dailyFeedback} />
-    </ul>
-    <RatingPieChart rating={avgGeneralRating}></RatingPieChart>
-    <h3>Social feedback for today:</h3>
-    <ul className="feedBackTextContainer">
-      <FeedBackPostSocial dailyFeedback={dailyFeedback} />
-    </ul>
-    <RatingPieChart rating={avgSocialRating}></RatingPieChart>
-    <br></br>
-    <TaskFeedBack />
-  </div>)
+  return (
+    <div className="feedBackGrid">
+      <h3>Genreral feedback for today:</h3>
+      <ul className="feedBackTextContainer">
+        <FeedBackPostGeneral dailyFeedback={dailyFeedback} />
+      </ul>
+      <RatingPieChart rating={avgGeneralRating}></RatingPieChart>
+      <h3>Social feedback for today:</h3>
+      <ul className="feedBackTextContainer">
+        <FeedBackPostSocial dailyFeedback={dailyFeedback} />
+      </ul>
+      <RatingPieChart rating={avgSocialRating}></RatingPieChart>
+      <br></br>
+      <TaskFeedBack />
+    </div>
+  )
 }
 
 

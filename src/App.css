@@ -152,9 +152,6 @@ html {
   font-size: 0.7rem;
 }
 
-.closeCheckInBtn {
-  margin-bottom: 1rem;
-}
 
 
 /* main main  */
@@ -296,7 +293,9 @@ hr {
 .dailyFeedBackForm {
   display: flex;
   flex-direction: column;
-  margin: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
   border: #000000 solid 0.3px;
   width: 300px;
   padding: 1rem;
@@ -316,12 +315,11 @@ hr {
   margin-right: 100%;
 }
 
-.dailyFeedBackForm input {
-  font-size: 0.8rem;
+.dailyFeedBackForm .textInput {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  color: #888888;
   margin-top: 1rem;
+  width: 90%;
 }
 
 
@@ -330,7 +328,9 @@ hr {
 .dailytaskFeedBack {
   display: flex;
   flex-direction: column;
-  margin: 1rem;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
   border: #000000 solid 0.3px;
   width: 300px;
   padding: 1rem;
@@ -345,11 +345,16 @@ hr {
 }
 
 .dailytaskFeedBack input {
-  font-size: 0.8rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  color: #888888;
   margin-top: 1rem;
+}
+
+.dailytaskFeedBack .textInput {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-top: 1rem;
+  width: 90%;
 }
 
 .taskFeedBackContainerNoButton {
@@ -430,7 +435,7 @@ hr {
 /* Employee task list css*/
 
 .checkBoxContainer {
-  padding: 5px;
+  padding: 0.5rem;
   list-style: none;
   border: 1px solid #9c0000;
   background-color: #ffffff;
@@ -438,12 +443,12 @@ hr {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  width: 250px;
+  width: 200px;
 }
 
 .checkBoxContainer li {
-  padding: 1rem;
-  border-bottom: 1px solid #9c0000;
+  padding-top: 0.5rem;
+  border-top: 1px solid #9c0000;
 }
 
 /* FeedBack container */
@@ -456,6 +461,7 @@ hr {
 /* feedback text list */
 
 .feedBackTextContainer {
+  padding: 1rem;
   border: 1px solid #9c0000;
   background-color: #ffffff;
   border-radius: 10px;
@@ -463,6 +469,13 @@ hr {
   flex-direction: column;
   gap: 12px;
   width: 250px;
+}
+
+.feedBackTextContainer li {
+  list-style: none;
+  border: #000000 solid 1px;
+  padding: 1rem;
+  border-radius: 10px;
 }
 
 

@@ -27,7 +27,7 @@ function SingleTask({ tasks }) {
 
 
   return (<>
-    <li>Tasks:</li>
+    <span className="currentDateParagpraph">Tasks:</span>
     {taskItems}
   </>)
 }
