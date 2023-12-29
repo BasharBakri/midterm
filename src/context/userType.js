@@ -21,11 +21,11 @@ export const TypeContextProvider = (props) => {
   const [typeText, setTypeText] = useState(false);
   // const [isCheckedIn, setIsCheckedIn] = useState(false)
   const handleUserType = (value) => {
-    setUserType(value)
+    setUserType(value);
     setTypeText(value);
-  }
+  };
   useEffect(() => {
-    fetch('https://64020dfe3779a86262641f9e.mockapi.io/days/4')
+    fetch('https://658dac0d7c48dce947399400.mockapi.io/days/4')
       .then(response => response.json())
       .then(data => {
         const employees = data.employees;
@@ -48,7 +48,7 @@ export const TypeContextProvider = (props) => {
         : employee
     );
     console.log('Updated Employees:', updatedEmployees);
-    fetch(`https://64020dfe3779a86262641f9e.mockapi.io/days/4`, {
+    fetch(`https://658dac0d7c48dce947399400.mockapi.io/days/4`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ employees: updatedEmployees })
@@ -68,7 +68,7 @@ export const TypeContextProvider = (props) => {
     changeType: handleUserType
   }}>
     {props.children}
-  </TypeContext.Provider>
+  </TypeContext.Provider>;
 };
 
 export default TypeContext;

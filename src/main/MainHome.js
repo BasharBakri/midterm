@@ -7,15 +7,15 @@ import { useEffect } from "react";
 import { useRevalidator } from "react-router-dom";
 import Welcome from "./Welcome";
 import { Link } from "react-router-dom";
-import { GrFormNextLink } from 'react-icons/gr'
+import { GrFormNextLink } from 'react-icons/gr';
 function MainHome() {
   // const type = parseInt(localStorage.getItem('userType'));
 
   const revalidator = useRevalidator();
   const type = useContext(TypeContext);
-  const info = useRouteLoaderData('root')
+  const info = useRouteLoaderData('root');
   const openSatus = info.isOpen;
-  const currentUserNo = parseInt(type.userType)
+  const currentUserNo = parseInt(type.userType);
 
 
 
@@ -28,7 +28,7 @@ function MainHome() {
       if (revalidator.state === 'idle') {
         revalidator.revalidate();
       }
-    }, 500);
+    }, 3000);
 
     return () => clearInterval(intervalId);
   }, [revalidator, openSatus]);
@@ -40,7 +40,7 @@ function MainHome() {
     <CheckIn></CheckIn>
 
     {currentUserNo === 4 && openSatus && <Link className="feedBackLink" to={'daily'}> Add tasks to employees: <GrFormNextLink className="feedBackLink" /></Link>}
-  </>)
+  </>);
 }
 
 export default MainHome;

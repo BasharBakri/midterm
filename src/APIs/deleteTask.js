@@ -5,14 +5,14 @@ export const deleteTask = async ({ request, params }) => {
   console.log('delete function check');
   const taskId = params.singleTaskId;
 
-  const response = await fetch(`https://64020dfe3779a86262641f9e.mockapi.io/days/4`);
+  const response = await fetch(`https://658dac0d7c48dce947399400.mockapi.io/days/4`);
   const day = await response.json();
 
   day.tasks = day.tasks.filter(task => task.taskId.toString() !== taskId);
   console.log(day.tasks);
 
 
-  const updateResponse = await fetch('https://64020dfe3779a86262641f9e.mockapi.io/days/4', {
+  const updateResponse = await fetch('https://658dac0d7c48dce947399400.mockapi.io/days/4', {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(day),

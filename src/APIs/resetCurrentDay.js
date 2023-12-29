@@ -45,7 +45,7 @@ export const resetCurrentDay = async ({ request, params }) => {
   };
 
   const response = await fetch(
-    `https://64020dfe3779a86262641f9e.mockapi.io/days/4`,
+    `https://658dac0d7c48dce947399400.mockapi.io/days/4`,
     {
       method: "PUT",
       headers: { "content-type": "application/json" },

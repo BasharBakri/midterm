@@ -1,7 +1,7 @@
 import { json } from "react-router-dom";
 
 export const getOpenState = async () => {
-  const response = await fetch('https://64020dfe3779a86262641f9e.mockapi.io/days/4', {
+  const response = await fetch('https://658dac0d7c48dce947399400.mockapi.io/days/4', {
     method: 'GET',
     headers: { 'content-type': 'application/json' },
   });
@@ -9,6 +9,6 @@ export const getOpenState = async () => {
     const resData = await response.json();
     return resData;
   } else {
-    throw json({ message: 'Could not fetch items' }, { status: 500 })
+    throw json({ message: 'Could not fetch items' }, { status: 500 });
   }
 };

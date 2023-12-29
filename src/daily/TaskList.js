@@ -4,7 +4,7 @@ import { useRevalidator } from "react-router-dom";
 import { useEffect } from "react";
 function TaskList() {
   const info = useRouteLoaderData('root');
-  const tasks = info.tasks
+  const tasks = info.tasks;
   const revalidator = useRevalidator();
 
 
@@ -30,7 +30,7 @@ function TaskList() {
       <SingleTask tasks={tasks} />
     </ul>
   </>
-  )
+  );
 }
 
 export default TaskList;

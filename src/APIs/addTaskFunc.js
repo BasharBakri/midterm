@@ -11,9 +11,9 @@ export const addTaskfunc = async ({ request, params }) => {
     managerId: 1,
     taskId: Math.random(),
     isComplete: false,
-  }
+  };
 
-  const response = await fetch(`https://64020dfe3779a86262641f9e.mockapi.io/days/4`);
+  const response = await fetch(`https://658dac0d7c48dce947399400.mockapi.io/days/4`);
   const existingData = await response.json();
 
   const updatedData = {
@@ -23,15 +23,15 @@ export const addTaskfunc = async ({ request, params }) => {
   console.log(updatedData);
 
 
-  const putResponse = await fetch(`https://64020dfe3779a86262641f9e.mockapi.io/days/4`, {
+  const putResponse = await fetch(`https://658dac0d7c48dce947399400.mockapi.io/days/4`, {
     method: 'PUT',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify(updatedData)
   });
   console.log(putResponse);
   if (!putResponse.ok) {
-    throw json({ message: 'Could not send Tasks' }, { status: 400 })
+    throw json({ message: 'Could not send Tasks' }, { status: 400 });
   } else {
-    return redirect('')
+    return redirect('');
   }
 };
